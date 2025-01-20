@@ -6,6 +6,7 @@ use App\Models\Product;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class AdminProductController extends Controller
 {
@@ -29,8 +30,9 @@ class AdminProductController extends Controller
         $product->description = $request->description;
         $product->price = $request->price;
 
-        $product->image = 'image.jpg'; 
-
+        $imagePath = "";
+        $request->image ? $imagePath = $request->file('image')->store('/storage/app/public') : $imagePath = 'image.jpg'; 
+        $product->image = $imagePath;
         $product->save();
 
         return redirect()->route('products.index')->with('success', 'Producto creado exitosamente.');

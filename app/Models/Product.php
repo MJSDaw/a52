@@ -9,10 +9,8 @@ class Product extends Model
 {
     use HasFactory;
 
-    // Especificar la tabla asociada
     protected $table = 'products';
 
-    // Especificar los campos asignables
     protected $fillable = [
         'name',
         'description',

@@ -27,3 +27,5 @@ Route::get('/admin', [AdminHomeController::class, 'index']);
 Route::get('/admin/products', [AdminProductController::class, 'index']);
 
 Route::post('/admin/products', [AdminProductController::class, 'store']);
+
+Route::post('/admin/products', [AdminProductController::class, 'store']);

@@ -13,7 +13,7 @@
         </div>
     @endif
   
-      <form method="POST" action="****** RUTA *****">
+      <form method="POST" action='/admin/products' enctype="multipart/form-data">
         @csrf
         <div class="row">
           <div class="col">
@@ -36,6 +36,10 @@
         <div class="mb-3">
           <label class="form-label">Descripción</label>
           <textarea class="form-control" name="description" rows="3"></textarea>
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Imagen</label>
+          <input type="file" name="image" class="form-control">
         </div>
         <button type="submit" class="btn btn-primary">Enviar</button>
       </form>
